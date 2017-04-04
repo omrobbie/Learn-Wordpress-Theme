@@ -5,5 +5,5 @@ Belajar membuat tema yang responsif di **wordpress** dengan menggunakan **bootst
 ---
 
 ### Teknologi yang di gunakan :
-* [Wordpress](http://wordpress.org "Wordpress.org)
+* [Wordpress](https://wordpress.org/ "Wordpress.org")
 * [Bootstrap](http://getbootstrap.com/getting-started "Getting started to bootstrap")
