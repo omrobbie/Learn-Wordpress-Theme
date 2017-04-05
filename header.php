@@ -21,5 +21,27 @@
 					</a>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<nav id="site-navigation" class="navbar navbar-inverse" role="navigation">
+						<div class="navbar-header">
+							<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuku">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div id="menuku" class="collapse navbar-collapse">
+							<?php
+								wp_nav_menu(array(
+									'theme_location'	=> 'primary',
+									'menu_class'		=> 'nav navbar-nav',
+									'menu_id'			=> 'primary-menu'
+								));
+							?>
+						</div>
+					</nav>
+				</div>
+			</div>
 		</div>
 	</header>
