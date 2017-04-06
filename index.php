@@ -7,7 +7,16 @@
 					if(have_posts()):
 						while(have_posts()):
 							the_post();
-							get_template_part('content',get_post_format());
+				?>
+							<div class="row">
+								<div class="col-md-4">
+									<?php tema_image_post(); ?>
+								</div>
+								<div class="col-md-8">
+									<?php get_template_part('content',get_post_format()); ?>
+								</div>
+							</div><br>
+				<?php
 						endwhile;
 					endif;
 				?>

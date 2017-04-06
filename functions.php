@@ -10,6 +10,10 @@
 
 	function tema_setup_nav() {
 		register_nav_menu('primary', __('Navigation Menu', 'temaku'));
+
+		// tampilkan fitur foto pada post
+		add_theme_support('post-thumbnails');
+		set_post_thumbnail_size(604, 270, true);
 	}
 	add_action('after_setup_theme', 'tema_setup_nav');
 
@@ -36,4 +40,22 @@
 			'caption'
 		)
 	);
+
+	// tampilkan fitur foto pada post
+	function tema_image_post() {
+		if(has_post_thumbnail()) {
+	?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-thumbnail">
+				<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'temaku'); ?>
+				<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>" width="100%" />
+			</a>
+	<?php
+		} else {
+	?>
+			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="<?php the_title(); ?>" width="100%">
+			</a>
+	<?php
+		}
+	};
 ?>
