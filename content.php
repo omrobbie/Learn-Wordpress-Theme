@@ -15,6 +15,20 @@
 		</div>
 	</header>
 	<div class="entry-content">
+		<?php
+			if(is_single()):
+				the_content();
+			else:
+				the_excerpt();
+		?>
+				<a href="<?php the_permalink(); ?>" class="btn btn-primary btn-xs">
+					<?php _e('Selengkapnya', 'temaku'); ?>
+				</a>
+		<?php
+			endif;
+		?>
+		<!-- versi awal untuk post yang panjang
 		<?php the_content(sprintf(__('Selengkapnya', 'temaku'), the_title('<span class="read-more">', '</span>', false))); ?>
+		-->
 	</div>
 </article>
