@@ -109,6 +109,7 @@ ul.nav ul ul {
 	padding-left: 10px;
 }
 
+/* untuk widget di sidebar */
 .widget {
 	margin: 0 0 20px;
 }
@@ -140,6 +141,7 @@ ul.nav ul ul {
 	text-decoration: none;
 }
 
+/* modifikasi kalender */
 #wp-calendar {
 	width: 100%;
 }
@@ -152,6 +154,7 @@ ul.nav ul ul {
 	padding: 3px 0;
 }
 
+/* untuk tampilan fitur foto pada post */
 article.post {
 	margin-top: 10px;
 	margin-bottom: 20px;
@@ -165,4 +168,19 @@ header .entry-meta {
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 	margin-bottom: 10px;
+}
+
+/* untuk pagination */
+.pagination a,
+.pagination .current {
+	display: inline-block;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+}
+
+.pagination a:hover,
+.pagination .current {
+	background: #337ab7;
+	color: #fff;
+	text-decoration: none;
 }

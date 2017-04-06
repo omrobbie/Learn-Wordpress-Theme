@@ -18,6 +18,11 @@
 							</div><br>
 				<?php
 						endwhile;
+				?>
+						<div class="pagination">
+							<?php tema_pagination(); ?>
+						</div>
+				<?php
 					endif;
 				?>
 			</div>
