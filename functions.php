@@ -25,4 +25,15 @@
 		));
 	}
 	add_action('widgets_init', 'tema_widget_init');
+
+	// aktifkan support html5 untuk modifikasi form pencarian
+	add_theme_support('html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption'
+		)
+	);
 ?>

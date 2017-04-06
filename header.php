@@ -42,6 +42,9 @@
 									'menu_id'			=> 'primary-menu'
 								));
 							?>
+							<ul class="pull-right">
+								<?php get_search_form(); ?>
+							</ul>
 						</div>
 					</nav>
 				</div>
