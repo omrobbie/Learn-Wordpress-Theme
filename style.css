@@ -139,3 +139,15 @@ ul.nav ul ul {
 	background: #f8f8f8;
 	text-decoration: none;
 }
+
+#wp-calendar {
+	width: 100%;
+}
+
+#wp-calendar th,
+#wp-calendar td,
+#wp-calendar caption {
+	text-align: center;
+	border: 1px solid #f7f7f7;
+	padding: 3px 0;
+}
