@@ -14,10 +14,13 @@
 			<div class="row header">
 				<div class="col-md-12">
 					<a href="<?php echo esc_url(home_url('/')); ?>">
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png" alt="wordpress theme" class="title-image">
+						<!-- data dari bloginfo di ganti dengan gambar logo.png
 						<h1>
 							<?php echo bloginfo('name'); ?><br>
 							<small><?php echo bloginfo('description'); ?></small>
 						</h1>
+						-->
 					</a>
 				</div>
 			</div>
