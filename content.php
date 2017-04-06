@@ -14,6 +14,7 @@
 			<?php edit_post_link(__('Edit', 'temaku'), '<span class="edit-link">', '</span>'); ?>
 		</div>
 	</header>
+	<?php tema_image_single(); ?>
 	<div class="entry-content">
 		<?php
 			if(is_single()):

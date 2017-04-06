@@ -58,4 +58,16 @@
 	<?php
 		}
 	};
+
+	// tampilkan fitur foto pada halaman single
+	function tema_image_single() {
+		if(has_post_thumbnail() && is_single()) {
+	?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-thumbnail">
+				<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'temaku'); ?>
+				<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>" width="100%">
+			</a><br><br>
+	<?php
+		}
+	};
 ?>
