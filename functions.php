@@ -44,30 +44,30 @@
 	// tampilkan fitur foto pada post
 	function tema_image_post() {
 		if(has_post_thumbnail()) {
-	?>
+?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-thumbnail">
 				<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'temaku'); ?>
 				<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>" width="100%" />
 			</a>
-	<?php
+<?php
 		} else {
-	?>
+?>
 			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/default-image.png" alt="<?php the_title(); ?>" width="100%">
 			</a>
-	<?php
+<?php
 		}
 	};
 
 	// tampilkan fitur foto pada halaman single
 	function tema_image_single() {
 		if(has_post_thumbnail() && is_single()) {
-	?>
+?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-thumbnail">
 				<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'temaku'); ?>
 				<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>" width="100%">
 			</a><br><br>
-	<?php
+<?php
 		}
 	};
 
@@ -84,5 +84,82 @@
 			'current'		=> max(1, get_query_var('paged')),
 			'total'			=> $wp_query->max_num_pages
 		));
+	}
+
+	// modifikasi tampilan daftar komentar
+	function tema_list_komentar($comment, $args, $depth) {
+		$GLOBALS['comment'] = $comment;
+		switch ($comment->comment_type):
+			case 'pingback':
+			case 'trackback':
+?>
+				<li class="media">
+					<p><?php _e('Pingback: ', 'temaku'); ?> <?php comment_author_link(); ?> <?php edit_comment_link(__('Edit', 'temaku'), '<span>', '</span>'); ?></p>
+				</li>
+<?php
+				break;
+			default:
+?>
+				<li class="media" id="comment-<?php comment_ID(); ?>">
+					<div class="media-left">
+						<?php
+							$avatar_size = 65;
+							echo get_avatar($comment, $avatar_size);
+						?>
+					</div>
+					<div class="media-body">
+						<div class="comment-header">
+							<?php
+								printf(
+									'%1$s %2$s ',
+									sprintf(
+										'<div class="author"><b>%s</b></div>',
+										get_comment_author_link()
+									),
+									sprintf(
+										'%2$s <a href="%1$s"><span class="time">%3$s</span></a>',
+										esc_url(
+											get_comment_link($comment->comment_ID)
+										),
+										get_comment_time(),
+										get_comment_date()
+									)
+								);
+							?>
+						</div>
+
+						<?php
+							edit_comment_link(__('Edit', 'temaku'), '<span>', '</span>');
+							if($comment->comment_approved == '0'):
+						?>
+								<em class="comment-awaiting">
+									<?php _e('Komentar anda menunggu disetujui.', 'temaku'); ?>
+								</em><br>
+						<?php
+							endif;
+						?>
+						<div class="comment_content">
+							<?php comment_text(); ?>
+							<div class="reply-link">
+								<span class="glyphicon glyphicon-share-alt"></span>
+								<?php
+									comment_reply_link(
+										array_merge(
+											$args,
+											array(
+												'reply-text'	=> __('Balas', 'temaku'),
+												'depth'			=> $depth,
+												'max_depth'		=> $args['max_depth']
+											)
+										)
+									);
+								?>
+							</div>
+						</div>
+					</div>
+				</li>
+<?php
+				break;
+		endswitch;
 	}
 ?>

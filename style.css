@@ -236,3 +236,38 @@ header .entry-meta {
 		top: 20px;
 	}
 }
+
+/* untuk tampilan komentar */
+.comments-title {
+	border-bottom: 2px solid #ccc;
+	padding-bottom: 5px;
+}
+
+li.media {
+	border: 1px solid #eee;
+	padding: 15px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+li.media a {
+	color: #aaa;
+}
+
+li.media .reply-link {
+	float: right;
+}
+
+li.media .glyphicon-share-alt {
+	transform: scale(-1, 1);
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	color: #aaa;
+}
+
+.comment-form .form-title {
+	border-bottom: 2px solid #ccc;
+	padding-bottom: 5px;
+}
