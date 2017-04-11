@@ -5,6 +5,14 @@
 			get_template_directory_uri().'/js/bootstrap.min.js',
 			array('jquery')
 		);
+
+		// untuk mengaktifkan customizer
+		wp_enqueue_script(
+			get_template_directory_uri().'/js/customizer.js',
+			array('customize-preview'),
+			'20170407',
+			'true'
+		);
 	}
 	add_action('wp_footer', 'tema_enqueue');
 
@@ -162,4 +170,7 @@
 				break;
 		endswitch;
 	}
+
+	// import file customizer.php
+	require get_template_directory().'/inc/customizer.php';
 ?>

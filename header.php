@@ -41,10 +41,25 @@
 									'menu_class'		=> 'nav navbar-nav',
 									'menu_id'			=> 'primary-menu'
 								));
+
+								// mengaktifkan fungsi customizer
+								if(get_theme_mod('tema_search_form', 0) == 1):
 							?>
 							<ul class="pull-right">
 								<?php get_search_form(); ?>
+								<!-- coding dibawah tidak di pakai (masih kasar)
+									<form action="<?php echo esc_url(home_url('/')); ?>" role="search" methode="get" class="search-form">
+										<label>
+											<span class="screen-reader-text"></span>
+											<input type="search" class="search-field" placeholder="<?php echo get_theme_mod('tema_search_text', 0); ?>" value="<?php echo get_search_query(); ?>">
+										</label>
+										<input type="submit" name="search-submit" value="Search">
+									</form>
+								-->
 							</ul>
+							<?php
+								endif;
+							?>
 						</div>
 					</nav>
 				</div>
