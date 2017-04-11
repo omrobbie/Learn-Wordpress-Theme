@@ -39,6 +39,28 @@
 			'setting'		=> 'tema_search_text'
 		));
 		$wp_customize->get_setting('tema_search_text')->transport = 'postMessage';
+		//---
+
+		// untuk kontrol posisi sidebar
+		$wp_customize->add_section('tema_sidebar_section', array(
+			'title'			=> __('Posisi Sidebar', 'temaku'),
+			'panel'			=> 'tema_design_options'
+		));
+		$wp_customize->add_setting('tema_sidebar', array(
+			'default'		=> 'kanan',
+			'transport'		=> 'refresh'
+		));
+		$wp_customize->add_control('tema_sidebar', array(
+			'type'			=> 'select',
+			'label'			=> __('Pilih posisi', 'temaku'),
+			'section'		=> 'tema_sidebar_section',
+			'setting'		=> 'tema_sidebar',
+			'choices'		=> array (
+				'kanan'	=> __('Content di kanan', 'temaku'),
+				'kiri'	=> __('Content di kiri', 'temaku')
+			)
+		));
+		//---
 	}
 	add_action('customize_register', 'tema_customize_register');
 ?>
