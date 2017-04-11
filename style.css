@@ -271,3 +271,26 @@ li.media .glyphicon-share-alt {
 	border-bottom: 2px solid #ccc;
 	padding-bottom: 5px;
 }
+
+/* untuk tampilan galeri */
+.gallery .gallery-item {
+	float: left;
+	margin-top: 10px;
+	text-align: center;
+	width: 25%;
+}
+
+.gallery img {
+	border: 1px solid #cfcfcfcf;
+	padding: 5px;
+}
+
+.gallery .gallery-caption {
+	margin-left: 0;
+}
+
+.entry-header {
+	border-bottom: 3px solid #eee;
+	padding: 5px 10px;
+	margin: 20px 0;
+}
