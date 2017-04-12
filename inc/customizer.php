@@ -81,6 +81,26 @@
 			)
 		));
 		//---
+
+		// untuk logo website
+		$wp_customize->add_section('tema_logo_section', array(
+			'title'			=> __('Logo Website', 'temaku'),
+			'panel'			=> 'tema_design_options'
+		));
+		$wp_customize->add_setting('tema_logo', array(
+			'default'		=> '',
+			'transport'		=> 'refresh'
+		));
+		$wp_customize->add_control(new WP_Customize_Image_Control(
+			$wp_customize,
+			'tema_logo',
+			array(
+				'label'			=> __('Pilih gambar', 'temaku'),
+				'section'		=> 'tema_logo_section',
+				'setting'		=> 'tema_logo'
+			)
+		));
+		//---
 	}
 	add_action('customize_register', 'tema_customize_register');
 ?>
