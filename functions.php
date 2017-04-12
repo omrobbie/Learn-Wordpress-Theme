@@ -35,6 +35,45 @@
 			'before_title'	=> '<h3 class="widget-title">',
 			'after_title'	=> '</h3>'
 		));
+
+		// membuat header untuk custom widget
+		register_sidebar(array(
+			'name'			=> __('Area Widget Konten', 'temaku'),
+			'id'			=> 'konten',
+			'description'	=> __('Tampil pada konten website', 'temaku'),
+			'before_widget'	=> '<aside id="%1$s" class="%2$s">',
+			'after_widget'	=> '</aside>',
+			'before_title'	=> '<h4 class="widget-title"><span>',
+			'after_title'	=> '</span></h4>'
+		));
+		register_sidebar(array(
+			'name'			=> __('Area Widget Footer Kiri', 'temaku'),
+			'id'			=> 'footer1',
+			'description'	=> __('Tampil pada footer bagian kiri', 'temaku'),
+			'before_widget'	=> '<aside id="%1$s" class="%2$s">',
+			'after_widget'	=> '</aside>',
+			'before_title'	=> '<h4 class="widget-title"><span>',
+			'after_title'	=> '</span></h4>'
+		));
+		register_sidebar(array(
+			'name'			=> __('Area Widget Footer Tengah', 'temaku'),
+			'id'			=> 'footer2',
+			'description'	=> __('Tampil pada footer bagian tengah', 'temaku'),
+			'before_widget'	=> '<aside id="%1$s" class="%2$s">',
+			'after_widget'	=> '</aside>',
+			'before_title'	=> '<h4 class="widget-title"><span>',
+			'after_title'	=> '</span></h4>'
+		));
+		register_sidebar(array(
+			'name'			=> __('Area Widget Footer Kanan', 'temaku'),
+			'id'			=> 'footer3',
+			'description'	=> __('Tampil pada footer bagian kanan', 'temaku'),
+			'before_widget'	=> '<aside id="%1$s" class="%2$s">',
+			'after_widget'	=> '</aside>',
+			'before_title'	=> '<h4 class="widget-title"><span>',
+			'after_title'	=> '</span></h4>'
+		));
+		//---
 	}
 	add_action('widgets_init', 'tema_widget_init');
 

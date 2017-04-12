@@ -9,24 +9,29 @@
 					<?php
 						get_template_part('carousel');
 						if(have_posts()):
-							while(have_posts()):
-								the_post();
+							// untuk mengaktifkan widget konten
+							if(is_home() and is_active_sidebar('konten')):
+								dynamic_sidebar('konten');
+							else:
+								while(have_posts()):
+									the_post();
 					?>
-								<div class="row">
-									<div class="col-md-4">
-										<?php tema_image_post(); ?>
-									</div>
-									<div class="col-md-8">
-										<?php get_template_part('content',get_post_format()); ?>
-									</div>
-								</div><br>
+									<div class="row">
+										<div class="col-md-4">
+											<?php tema_image_post(); ?>
+										</div>
+										<div class="col-md-8">
+											<?php get_template_part('content',get_post_format()); ?>
+										</div>
+									</div><br>
 					<?php
-							endwhile;
+								endwhile;
 					?>
-							<div class="pagination">
-								<?php tema_pagination(); ?>
-							</div>
+								<div class="pagination">
+									<?php tema_pagination(); ?>
+								</div>
 					<?php
+							endif;
 						endif;
 					?>
 				</div>
