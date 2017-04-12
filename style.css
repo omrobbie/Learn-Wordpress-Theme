@@ -294,3 +294,9 @@ li.media .glyphicon-share-alt {
 	padding: 5px 10px;
 	margin: 20px 0;
 }
+
+/* untuk custom widget footer */
+#footer-widget .container,
+footer .container {
+	background: #ececec;
+}
