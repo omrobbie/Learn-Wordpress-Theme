@@ -101,6 +101,38 @@
 			)
 		));
 		//---
+
+		// membuat custom control
+		$wp_customize->add_section('tema_css_section', array(
+			'title'			=> __('Custom CSS', 'temaku'),
+			'panel'			=> 'tema_design_options'
+		));
+		$wp_customize->add_setting('tema_css', array(
+			'default'		=> '',
+			'transport'		=> 'refresh'
+		));
+		class TEMA_Textarea extends WP_Customize_Control {
+			public $type = 'custom_css';
+			public function render_content() {
+?>
+				<label>
+					<span><?php echo esc_html($this->label); ?></span>
+					<textarea rows="5" style="width:100%;" <?php $this->link() ?>>
+						<?php echo esc_textarea($this->value()); ?>
+					</textarea>
+				</label>
+<?php
+			}
+		}
+		$wp_customize->add_control(new TEMA_Textarea(
+			$wp_customize,
+			'tema_css',
+			array(
+				'label'			=> __('Masukkan skrip CSS', 'temaku'),
+				'section'		=> 'tema_css_section',
+				'setting'		=> 'tema_css'
+			)
+		));
 	}
 	add_action('customize_register', 'tema_customize_register');
 ?>

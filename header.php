@@ -6,8 +6,8 @@
 	<title><?php wp_title('|', true, 'right'); ?></title>
 	<link rel="pingback" href="<?php echo bloginfo('pingback_url'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('stylesheet_url'); ?>">
-	<!-- untuk mengaktifkan color customizer -->
 	<style type="text/css">
+		/* untuk mengaktifkan color customizer */
 		.widget .widget-title {
 			background: <?php echo get_theme_mod('tema_color', 0); ?>;
 		}
@@ -15,6 +15,9 @@
 		.navbar {
 			background: <?php echo get_theme_mod('tema_color', 0); ?>;
 		}
+
+		/* untuk mengaktifkan custom control */
+		<?php echo get_theme_mod('tema_css', 0); ?>
 	</style>
 	<?php wp_head(); ?>
 </head>
