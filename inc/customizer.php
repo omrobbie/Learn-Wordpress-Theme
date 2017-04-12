@@ -61,6 +61,26 @@
 			)
 		));
 		//---
+
+		// untuk kontrol warna background
+		$wp_customize->add_section('tema_color_section', array(
+			'title'			=> __('Warna', 'temaku'),
+			'panel'			=> 'tema_design_options'
+		));
+		$wp_customize->add_setting('tema_color', array(
+			'default'		=> '#222222',
+			'transport'		=> 'refresh'
+		));
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'tema_color',
+			array(
+				'label'			=> __('Warna Desain', 'temaku'),
+				'section'		=> 'tema_color_section',
+				'setting'		=> 'tema_color'
+			)
+		));
+		//---
 	}
 	add_action('customize_register', 'tema_customize_register');
 ?>
