@@ -212,4 +212,7 @@
 
 	// import file customizer.php
 	require get_template_directory().'/inc/customizer.php';
+
+	// import file widgets.php
+	require get_template_directory().'/inc/widgets.php';
 ?>
